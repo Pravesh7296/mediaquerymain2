@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>boxlayout</title>
+    <style>
+.nav{
+    width: 90%;
+    height: 150px;
+    color: aliceblue;
+    background-color: yellow;
+    margin-bottom: 2vh;
+}
+.grid{
+    display: grid;
+    width: 95%;
+    gap: 40px;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: 500px;
+}
+.right{
+    display: grid;
+    width: 50%;
+    gap: 40px;
+    grid-template-columns: repeat(1,1fr);
+    grid-template-rows: 150px;
+}
+.grid>div:nth-child(1){
+    background-color: red;
+}
+.right>div{
+    
+    background-color: green;
+}
+
+@media only screen and (min-width:600px) and (max-width:1000px) {
+    .grid{
+        grid-template-columns: repeat(1,1fr);
+        grid-template-rows: 300px;
+    }
+    .right{
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: 100px;
+        width: 100%;
+    }
+}
+@media only screen and (max-width:599px) {
+    .grid{
+        grid-template-columns: repeat(1,1fr);
+        grid-template-rows: 300px;
+        width: 100%;
+    }
+    .right{
+        grid-template-columns: repeat(1,1fr);
+        grid-template-rows: 200px 200px 200px;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="nav"></div>
+    <div class="grid">
+    <div >Left Box</div>
+    <div class="right">
+        <div>Right Box1</div>
+        <div>Right Box2</div>
+        <div>Right Box3</div>
+    </div>
+</div>
+</body>
+</html>
